@@ -1,0 +1,59 @@
+1. ¿Qué es el Control de Versiones?
+Antes de hablar de la herramienta, hay que entender el problema que resuelve.
+
+Concepto: Es un sistema que registra los cambios realizados en un archivo o conjunto de archivos a lo largo del tiempo.
+
+El problema clásico: Evita que los alumnos terminen con carpetas llenas de archivos como proyecto_final.txt, proyecto_final_v2.txt, proyecto_final_ESTE_SI.txt.
+
+La solución: Permite volver a versiones anteriores, ver quién modificó qué, y recuperar código si algo se rompe.
+
+2. ¿Qué es Git y para qué sirve?
+Definición: Git es el sistema de control de versiones distribuido más popular del mundo, creado por Linus Torvalds.
+
+Para qué sirve: Sirve como una "máquina del tiempo" para el código. Rastrea cada modificación, permite el trabajo simultáneo de varias personas en un mismo proyecto sin sobreescribir el trabajo del otro, y mantiene un historial detallado y seguro.
+
+3. ¿Qué es un Repositorio?
+El concepto: Un repositorio (o "repo") es simplemente el directorio o carpeta donde Git está "observando" y guardando el historial del proyecto.
+
+El interior: Contiene una carpeta oculta llamada .git, que es donde ocurre toda la magia (el historial, las ramas y las configuraciones). Si borras esa carpeta, el proyecto vuelve a ser una carpeta normal de tu computadora.
+
+4. Diferencia clave: Git vs. GitHub
+Es el error de concepto más común en principiantes. Hay que separarlos claramente:
+
+Git: Es el software o la herramienta subyacente. Se instala en tu computadora y funciona de manera local (sin internet).
+
+GitHub: Es un servicio en la nube (una plataforma) que aloja repositorios de Git. Es la red social o el "Google Drive" del código, donde los equipos suben su trabajo para colaborar a distancia. (Otras alternativas: GitLab, Bitbucket).
+
+5. El Flujo Básico de Trabajo (The Git Workflow)
+Para trabajar con Git, el alumno debe entender que los archivos pasan por tres "zonas" o estados principales:
+
+Directorio de Trabajo (Working Directory): Donde escribes y modificas tu código. Los archivos están "modificados" pero Git aún no los está rastreando para la próxima versión.
+
+Área de Preparación (Staging Area): Es como la "sala de espera" o el escenario. Aquí agregas los archivos que ya están listos para ser guardados en la próxima versión.
+
+Repositorio Local (Local Repo): Donde los cambios se guardan de forma permanente tras sacarles la "foto" (el commit).
+
+Comandos básicos del flujo:
+git init: Inicializa un repositorio nuevo en una carpeta.
+
+git status: El mejor amigo del principiante. Muestra en qué estado están los archivos.
+
+git add <archivo> (o git add .): Mueve los cambios al Staging Area.
+
+git commit -m "mensaje descriptivo": Toma la "foto" y guarda los cambios en el historial del repositorio de forma permanente.
+
+6. El concepto de Ramas (Branches)
+La metáfora: Imagina que estás escribiendo un libro y quieres probar un final alternativo sin borrar el original. Creas una "rama" (copia temporal) de la historia.
+
+Para qué sirven: Permiten trabajar en nuevas funcionalidades (features) o arreglar errores de forma totalmente aislada. Si la idea fracasa, simplemente borras la rama. Si funciona, la unes a la rama principal (generalmente llamada main o master).
+
+7. Explicación básica de Resolución de Conflictos
+¿Por qué ocurren?: Un conflicto pasa cuando dos personas (o tú mismo en dos ramas distintas) modifican la misma línea del mismo archivo, o cuando uno edita un archivo y el otro lo elimina. Git es inteligente, pero no adivina intenciones; no sabe con qué cambio quedarse y pausa el proceso.
+
+Cómo se resuelven (pasos básicos):
+
+Git avisa que hay un conflicto y modifica el archivo en disputa, insertando marcadores visuales (<<<<<<<, =======, >>>>>>>) para mostrar las dos versiones enfrentadas.
+
+El desarrollador abre el archivo, lee ambas partes, borra los marcadores de Git y edita el código para dejar la versión final deseada.
+
+Una vez limpio, se guarda el archivo, se usa git add y finalmente un git commit para concluir la resolución.
